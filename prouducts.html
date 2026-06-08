@@ -1,101 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products – Elissa Online Store</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-  <a href="index.html" class="logo">Elissa<span> Online</span><em> Store</em></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="prouducts.html">Products</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="member.html">Member</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="prouducts.html" class="cart-icon">🛒<span class="cart-count">0</span></a>
-    <div class="hamburger"><span></span><span></span><span></span></div>
-  </div>
-</nav>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Elissa<span> Online</span><em> Store</em></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="prouducts.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="member.html">Member</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="prouducts.html" class="cart-icon">🛒<span class="cart-count">0</span></a>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
 
-<div class="page-header">
-  <h1>All <span class="gold">Products</span></h1>
-  <p>Browse our full collection — quality you can trust 🇷🇼</p>
-  <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Products</span></div>
-</div>
-
-<section>
-  <div class="filters">
-    <button class="f-btn active" data-filter="all">All</button>
-    <button class="f-btn" data-filter="electronics">Electronics</button>
-    <button class="f-btn" data-filter="footwear">Footwear</button>
-    <button class="f-btn" data-filter="accessories">Accessories</button>
-    <button class="f-btn" data-filter="clothing">Clothing</button>
-    <button class="f-btn" data-filter="beauty">Beauty</button>
-    <div class="search-wrap"><input type="text" placeholder="🔍 Search products..."></div>
+  <div class="page-header">
+    <h1>All <span class="gold">Products</span></h1>
+    <p>Browse our full collection — quality you can trust 🇷🇼</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Products</span></div>
   </div>
 
-  <div class="products-grid">
-    <div class="product-card" data-cat="electronics"><span class="badge">🔥 HOT</span><div class="prod-img">🎧</div><div class="prod-info"><h3>Pro Wireless Headphones</h3><div class="prod-rating">★★★★★ (128)</div><div class="prod-price"><span class="price-now">RWF 89,000</span><span class="price-old">RWF 129,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p1','Pro Headphones',89000,'🎧')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+  <section>
+    <div class="filters">
+      <button class="f-btn active" data-filter="all">All</button>
+      <button class="f-btn" data-filter="electronics">Electronics</button>
+      <button class="f-btn" data-filter="footwear">Footwear</button>
+      <button class="f-btn" data-filter="accessories">Accessories</button>
+      <button class="f-btn" data-filter="clothing">Clothing</button>
+      <button class="f-btn" data-filter="beauty">Beauty</button>
+      <div class="search-wrap"><input type="text" placeholder="🔍 Search products..."></div>
+    </div>
 
-    <div class="product-card" data-cat="accessories"><span class="badge badge-green">NEW</span><div class="prod-img">⌚</div><div class="prod-info"><h3>Smart Watch Series 5</h3><div class="prod-rating">★★★★☆ (84)</div><div class="prod-price"><span class="price-now">RWF 249,000</span><span class="price-old">RWF 299,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p2','Smart Watch',249000,'⌚')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+    <div class="products-grid">
+      <div class="product-card" data-cat="electronics"><span class="badge">🔥 HOT</span>
+        <div class="prod-img"><img src="images/headphone.jpg" alt=""></div>
+        <div class="prod-info">
+          <h3>Pro Wireless Headphones</h3>
+          <div class="prod-rating">★★★★★ (128)</div>
+          <div class="prod-price"><span class="price-now">RWF 89,000</span><span class="price-old">RWF 129,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p1','Pro Headphones',89000,'🎧')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-    <div class="product-card" data-cat="footwear"><div class="prod-img">👟</div><div class="prod-info"><h3>Air Max Pro X Sneakers</h3><div class="prod-rating">★★★★★ (256)</div><div class="prod-price"><span class="price-now">RWF 129,000</span><span class="price-old">RWF 179,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p3','Air Max Pro X',129000,'👟')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+      <div class="product-card" data-cat="accessories"><span class="badge badge-green">NEW</span>
+        <div class="prod-img"><img src="images/watch.jpg" alt=""></div>
+        <div class="prod-info">
+          <h3>Smart Watch Series 5</h3>
+          <div class="prod-rating">★★★★☆ (84)</div>
+          <div class="prod-price"><span class="price-now">RWF 249,000</span><span class="price-old">RWF 299,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p2','Smart Watch',249000,'⌚')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-    <div class="product-card" data-cat="electronics"><span class="badge">SALE</span><div class="prod-img">📱</div><div class="prod-info"><h3>Phone Protective Case</h3><div class="prod-rating">★★★★☆ (42)</div><div class="prod-price"><span class="price-now">RWF 19,000</span><span class="price-old">RWF 34,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p4','Phone Case',19000,'📱')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+      <div class="product-card" data-cat="footwear">
+        <div class="prod-img"><img src="images/shoes.webp" alt=""></div>
+        <div class="prod-info">
+          <h3>Air Max Pro X Sneakers</h3>
+          <div class="prod-rating">★★★★★ (256)</div>
+          <div class="prod-price"><span class="price-now">RWF 129,000</span><span class="price-old">RWF 179,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p3','Air Max Pro X',129000,'👟')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-    <div class="product-card" data-cat="clothing"><div class="prod-img">👔</div><div class="prod-info"><h3>Classic Oxford Shirt</h3><div class="prod-rating">★★★★★ (63)</div><div class="prod-price"><span class="price-now">RWF 59,000</span><span class="price-old">RWF 89,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p5','Oxford Shirt',59000,'👔')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+      <div class="product-card" data-cat="electronics"><span class="badge">SALE</span>
+        <div class="prod-img"><img src="images/samsung.webp" alt=""></div>
+        <div class="prod-info">
+          <h3>Phone Protective Case</h3>
+          <div class="prod-rating">★★★★☆ (42)</div>
+          <div class="prod-price"><span class="price-now">RWF 19,000</span><span class="price-old">RWF 34,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p4','Phone Case',19000,'📱')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-    <div class="product-card" data-cat="beauty"><span class="badge badge-green">NEW</span><div class="prod-img">💄</div><div class="prod-info"><h3>Luxury Lip Collection</h3><div class="prod-rating">★★★★☆ (91)</div><div class="prod-price"><span class="price-now">RWF 45,000</span><span class="price-old">RWF 65,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p6','Lip Collection',45000,'💄')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+      <div class="product-card" data-cat="clothing">
+        <div class="prod-img"><img src="images/shirt.webp" alt=""></div>
+        <div class="prod-info">
+          <h3>Classic Oxford Shirt</h3>
+          <div class="prod-rating">★★★★★ (63)</div>
+          <div class="prod-price"><span class="price-now">RWF 59,000</span><span class="price-old">RWF 89,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p5','Oxford Shirt',59000,'👔')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-    <div class="product-card" data-cat="accessories"><div class="prod-img">👜</div><div class="prod-info"><h3>Designer Handbag</h3><div class="prod-rating">★★★★★ (37)</div><div class="prod-price"><span class="price-now">RWF 189,000</span><span class="price-old">RWF 249,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p7','Designer Handbag',189000,'👜')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+      <div class="product-card" data-cat="beauty"><span class="badge badge-green">NEW</span>
+        <div class="prod-img"><img src="images/lipstick.webp" alt="">
+        </div>
+        <div class="prod-info">
+          <h3>Luxury Lip Collection</h3>
+          <div class="prod-rating">★★★★☆ (91)</div>
+          <div class="prod-price"><span class="price-now">RWF 45,000</span><span class="price-old">RWF 65,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p6','Lip Collection',45000,'💄')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-    <div class="product-card" data-cat="electronics"><span class="badge">🔥 HOT</span><div class="prod-img">💻</div><div class="prod-info"><h3>Laptop Stand Pro</h3><div class="prod-rating">★★★★☆ (55)</div><div class="prod-price"><span class="price-now">RWF 39,000</span><span class="price-old">RWF 59,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p8','Laptop Stand',39000,'💻')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+      <div class="product-card" data-cat="accessories">
+        <div class="prod-img"><img src="images/bag.jpg" alt=""></div>
+        <div class="prod-info">
+          <h3>Designer Handbag</h3>
+          <div class="prod-rating">★★★★★ (37)</div>
+          <div class="prod-price"><span class="price-now">RWF 189,000</span><span class="price-old">RWF 249,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p7','Designer Handbag',189000,'👜')">Add to Cart</button><button
+              class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-    <div class="product-card" data-cat="footwear"><div class="prod-img">👠</div><div class="prod-info"><h3>Elegant Heels</h3><div class="prod-rating">★★★★★ (114)</div><div class="prod-price"><span class="price-now">RWF 99,000</span><span class="price-old">RWF 149,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p9','Elegant Heels',99000,'👠')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+      <div class="product-card" data-cat="electronics"><span class="badge">🔥 HOT</span>
+        <div class="prod-img"><img src="images/lenovo.webp" alt=""></div>
+        <div class="prod-info">
+          <h3>Laptop Stand Pro</h3>
+          <div class="prod-rating">★★★★☆ (55)</div>
+          <div class="prod-price"><span class="price-now">RWF 39,000</span><span class="price-old">RWF 59,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p8','Laptop Stand',39000,'💻')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-    <div class="product-card" data-cat="clothing"><span class="badge">SALE</span><div class="prod-img">🧥</div><div class="prod-info"><h3>Winter Coat Deluxe</h3><div class="prod-rating">★★★★☆ (78)</div><div class="prod-price"><span class="price-now">RWF 179,000</span><span class="price-old">RWF 259,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p10','Winter Coat',179000,'🧥')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+      <div class="product-card" data-cat="footwear">
+        <div class="prod-img"><img src="images/elegant-heels.avif" alt=""></div>
+        <div class="prod-info">
+          <h3>Elegant Heels</h3>
+          <div class="prod-rating">★★★★★ (114)</div>
+          <div class="prod-price"><span class="price-now">RWF 99,000</span><span class="price-old">RWF 149,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p9','Elegant Heels',99000,'👠')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-    <div class="product-card" data-cat="beauty"><div class="prod-img">🧴</div><div class="prod-info"><h3>Skincare Essentials Kit</h3><div class="prod-rating">★★★★★ (203)</div><div class="prod-price"><span class="price-now">RWF 79,000</span><span class="price-old">RWF 109,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p11','Skincare Kit',79000,'🧴')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
+      <div class="product-card" data-cat="clothing"><span class="badge">SALE</span>
+        <div class="prod-img"><img src="images/shirt.webp" alt=""></div>
+        <div class="prod-info">
+          <h3>Winter Coat Deluxe</h3>
+          <div class="prod-rating">★★★★☆ (78)</div>
+          <div class="prod-price"><span class="price-now">RWF 179,000</span><span class="price-old">RWF 259,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p10','Winter Coat',179000,'🧥')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-    <div class="product-card" data-cat="accessories"><span class="badge badge-green">NEW</span><div class="prod-img">🕶️</div><div class="prod-info"><h3>UV Shield Sunglasses</h3><div class="prod-rating">★★★★☆ (49)</div><div class="prod-price"><span class="price-now">RWF 69,000</span><span class="price-old">RWF 99,000</span></div><div class="prod-actions"><button class="btn btn-primary" onclick="addToCart('p12','Sunglasses',69000,'🕶️')">Add to Cart</button><button class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div></div></div>
-  </div>
+      <div class="product-card" data-cat="beauty">
+        <div class="prod-img"><img src="images/skin oil.jpg" alt=""></div>
+        <div class="prod-info">
+          <h3>Skincare Essentials Kit</h3>
+          <div class="prod-rating">★★★★★ (203)</div>
+          <div class="prod-price"><span class="price-now">RWF 79,000</span><span class="price-old">RWF 109,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p11','Skincare Kit',79000,'🧴')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
 
-  <!-- CART TABLE -->
-  <div style="margin-top:4rem;">
-    <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:2rem;">Your <span class="gold">Cart</span></h2>
-    <div class="cart-layout" id="cartArea"></div>
-  </div>
-</section>
+      <div class="product-card" data-cat="accessories"><span class="badge badge-green">NEW</span>
+        <div class="prod-img"><img src="images/sunglasses.webp" alt=""></div>
+        <div class="prod-info">
+          <h3>UV Shield Sunglasses</h3>
+          <div class="prod-rating">★★★★☆ (49)</div>
+          <div class="prod-price"><span class="price-now">RWF 69,000</span><span class="price-old">RWF 99,000</span>
+          </div>
+          <div class="prod-actions"><button class="btn btn-primary"
+              onclick="addToCart('p12','Sunglasses',69000,'🕶️')">Add to Cart</button><button class="btn btn-outline"
+              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+        </div>
+      </div>
+    </div>
 
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand"><a href="index.html" class="logo">Elissa<span> Online</span><em> Store</em></a><p>Your trusted shopping destination in Rwanda.</p></div>
-    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="prouducts.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Support</h4><ul><li><a href="contact.html">Help Center</a></li><li><a href="member.html">My Account</a></li></ul></div>
-    <div class="footer-col"><h4>Follow Us</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Twitter</a></li><li><a href="#">Facebook</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">© 2026 Elissa Online Store. All rights reserved.<div class="footer-flag">🇷🇼 Made with ❤️ in Rwanda</div></div>
-</footer>
+    <!-- CART TABLE -->
+    <div style="margin-top:4rem;">
+      <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:2rem;">Your <span class="gold">Cart</span></h2>
+      <div class="cart-layout" id="cartArea"></div>
+    </div>
+  </section>
 
-<script src="js/main.js"></script>
-<script>
-function renderCart() {
-  const area = document.getElementById('cartArea');
-  if (!area) return;
-  if (cart.length === 0) {
-    area.innerHTML = `<div class="empty-cart"><div class="em">🛒</div><h2>Your cart is empty</h2><p>Add some products above!</p><a href="prouducts.html" class="btn btn-gold" style="margin-top:1rem;">Start Shopping</a></div>`;
-    return;
-  }
-  const sub=cartTotal(), ship=sub>50000?0:5000, tax=Math.round(sub*.18), total=sub+ship+tax;
-  const fmt = n => 'RWF '+n.toLocaleString();
-  const rows = cart.map(i=>`<tr><td><div class="c-prod"><span class="em">${i.emoji}</span><div><h4>${i.name}</h4><p>${fmt(i.price)} each</p></div></div></td><td>${fmt(i.price)}</td><td><div class="qty-ctrl"><button class="q-btn" onclick="updQty('${i.id}',-1)">−</button><span>${i.qty}</span><button class="q-btn" onclick="updQty('${i.id}',1)">+</button></div></td><td><strong>${fmt(i.price*i.qty)}</strong></td><td><button class="rm-btn" onclick="remItem('${i.id}')">🗑</button></td></tr>`).join('');
-  area.innerHTML = `
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo">Elissa<span> Online</span><em> Store</em></a>
+        <p>Your trusted shopping destination in Rwanda.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="prouducts.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Help Center</a></li>
+          <li><a href="member.html">My Account</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Elissa Online Store. All rights reserved.<div class="footer-flag">🇷🇼 Made with
+        ❤️ in Rwanda</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function renderCart() {
+      const area = document.getElementById('cartArea');
+      if (!area) return;
+      if (cart.length === 0) {
+        area.innerHTML = `<div class="empty-cart"><div class="em">🛒</div><h2>Your cart is empty</h2><p>Add some products above!</p><a href="prouducts.html" class="btn btn-gold" style="margin-top:1rem;">Start Shopping</a></div>`;
+        return;
+      }
+      const sub = cartTotal(), ship = sub > 50000 ? 0 : 5000, tax = Math.round(sub * .18), total = sub + ship + tax;
+      const fmt = n => 'RWF ' + n.toLocaleString();
+      const rows = cart.map(i => `<tr><td><div class="c-prod"><span class="em">${i.emoji}</span><div><h4>${i.name}</h4><p>${fmt(i.price)} each</p></div></div></td><td>${fmt(i.price)}</td><td><div class="qty-ctrl"><button class="q-btn" onclick="updQty('${i.id}',-1)">−</button><span>${i.qty}</span><button class="q-btn" onclick="updQty('${i.id}',1)">+</button></div></td><td><strong>${fmt(i.price * i.qty)}</strong></td><td><button class="rm-btn" onclick="remItem('${i.id}')">🗑</button></td></tr>`).join('');
+      area.innerHTML = `
     <div>
       <table class="cart-table">
         <thead><tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th><th></th></tr></thead>
@@ -106,20 +266,21 @@ function renderCart() {
     <div class="cart-summary">
       <h3>Order Summary</h3>
       <div class="s-row"><span>Subtotal (${cartCount()} items)</span><span>${fmt(sub)}</span></div>
-      <div class="s-row"><span>Shipping</span><span>${ship===0?'<span style="color:var(--green)">FREE</span>':fmt(ship)}</span></div>
+      <div class="s-row"><span>Shipping</span><span>${ship === 0 ? '<span style="color:var(--green)">FREE</span>' : fmt(ship)}</span></div>
       <div class="s-row"><span>VAT (18%)</span><span>${fmt(tax)}</span></div>
       <div class="s-row total"><span>Total</span><span>${fmt(total)}</span></div>
       <div class="promo-row"><input type="text" id="pc" placeholder="Promo code"><button class="btn btn-outline" onclick="applyPromo()" style="padding:.5rem 1rem;font-size:.82rem;">Apply</button></div>
       <button class="btn btn-gold" style="width:100%;justify-content:center;margin-bottom:.8rem;" onclick="checkout()">Checkout →</button>
       <p style="text-align:center;color:var(--muted);font-size:.78rem;">🔒 Secure | 📱 MTN MoMo accepted</p>
     </div>`;
-}
-function updQty(id,d){const i=cart.find(x=>x.id===id);if(!i)return;i.qty+=d;if(i.qty<=0)cart=cart.filter(x=>x.id!==id);saveCart();updateBadge();renderCart();}
-function remItem(id){cart=cart.filter(x=>x.id!==id);saveCart();updateBadge();renderCart();showToast('Item removed');}
-function clearAll(){cart=[];saveCart();updateBadge();renderCart();}
-function applyPromo(){const c=document.getElementById('pc')?.value.toUpperCase();showToast(c==='ELISSA10'?'✓ 10% off applied! Murakoze!':'Invalid promo code');}
-function checkout(){showToast('🎉 Order placed! Murakoze! (Thank you)');setTimeout(()=>{cart=[];saveCart();updateBadge();renderCart();},2500);}
-document.addEventListener('DOMContentLoaded', renderCart);
-</script>
+    }
+    function updQty(id, d) { const i = cart.find(x => x.id === id); if (!i) return; i.qty += d; if (i.qty <= 0) cart = cart.filter(x => x.id !== id); saveCart(); updateBadge(); renderCart(); }
+    function remItem(id) { cart = cart.filter(x => x.id !== id); saveCart(); updateBadge(); renderCart(); showToast('Item removed'); }
+    function clearAll() { cart = []; saveCart(); updateBadge(); renderCart(); }
+    function applyPromo() { const c = document.getElementById('pc')?.value.toUpperCase(); showToast(c === 'ELISSA10' ? '✓ 10% off applied! Murakoze!' : 'Invalid promo code'); }
+    function checkout() { showToast('🎉 Order placed! Murakoze! (Thank you)'); setTimeout(() => { cart = []; saveCart(); updateBadge(); renderCart(); }, 2500); }
+    document.addEventListener('DOMContentLoaded', renderCart);
+  </script>
 </body>
+
 </html>
