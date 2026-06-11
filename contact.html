@@ -1,149 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact – Elissa Online Store</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/contact.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-  <a href="index.html" class="logo">Elissa<span> Online</span><em> Store</em></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="prouducts.html">Products</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="member.html">Member</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="prouducts.html" class="cart-icon">🛒<span class="cart-count">0</span></a>
-    <div class="hamburger"><span></span><span></span><span></span></div>
-  </div>
-</nav>
-
-<div class="page-header">
-  <h1>Contact <span class="gold">Us</span></h1>
-  <p>Twandikire — We'd love to hear from you 🇷🇼</p>
-  <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Contact</span></div>
-</div>
-
-<section>
-  <div class="contact-layout">
-
-    <div class="contact-info">
-      <h2>Get in <span class="accent">Touch</span></h2>
-      <p>Have a question about your order or our products? Our support team is available every day to help you. <em style="color:var(--gold);">Turaza kukwifuriza!</em> (We are happy to help you!)</p>
-
-      <div class="c-item"><div class="c-icon">📍</div><div><h4>Our Address</h4><p>KG 7 Ave, Kiyovu<br>Kigali, Rwanda</p></div></div>
-      <div class="c-item"><div class="c-icon">📧</div><div><h4>Email</h4><p>support@elissastore.rw<br>orders@elissastore.rw</p></div></div>
-      <div class="c-item"><div class="c-icon">📞</div><div><h4>Phone / WhatsApp</h4><p>+250 788 123 456<br>+250 722 987 654</p></div></div>
-      <div class="c-item"><div class="c-icon">📱</div><div><h4>MTN MoMo</h4><p>0788 123 456<br>Pay easily with Mobile Money</p></div></div>
-
-      <!-- STORE HOURS TABLE -->
-      <div style="margin-top:2rem;">
-        <h3 style="margin-bottom:1rem;font-size:1rem;color:var(--gold);">Store Hours (Amasaha y'akazi)</h3>
-        <table style="width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius);overflow:hidden;">
-          <thead>
-            <tr style="background:var(--primary);border-bottom:2px solid var(--accent);">
-              <th style="padding:.7rem 1rem;text-align:left;font-size:.78rem;color:var(--muted);">Day</th>
-              <th style="padding:.7rem 1rem;text-align:left;font-size:.78rem;color:var(--muted);">Hours</th>
-              <th style="padding:.7rem 1rem;text-align:left;font-size:.78rem;color:var(--muted);">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:.7rem 1rem;font-size:.88rem;">Monday (Kuwa mbere)</td><td style="padding:.7rem 1rem;color:var(--muted);font-size:.88rem;">8AM – 6PM</td><td style="padding:.7rem 1rem;"><span style="color:var(--green);font-size:.82rem;">● Open</span></td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:.7rem 1rem;font-size:.88rem;">Tuesday (Kuwa kabiri)</td><td style="padding:.7rem 1rem;color:var(--muted);font-size:.88rem;">8AM – 6PM</td><td style="padding:.7rem 1rem;"><span style="color:var(--green);font-size:.82rem;">● Open</span></td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:.7rem 1rem;font-size:.88rem;">Wednesday (Kuwa gatatu)</td><td style="padding:.7rem 1rem;color:var(--muted);font-size:.88rem;">8AM – 6PM</td><td style="padding:.7rem 1rem;"><span style="color:var(--green);font-size:.82rem;">● Open</span></td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:.7rem 1rem;font-size:.88rem;">Thursday (Kuwa kane)</td><td style="padding:.7rem 1rem;color:var(--muted);font-size:.88rem;">8AM – 6PM</td><td style="padding:.7rem 1rem;"><span style="color:var(--green);font-size:.82rem;">● Open</span></td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:.7rem 1rem;font-size:.88rem;">Friday (Kuwa gatanu)</td><td style="padding:.7rem 1rem;color:var(--muted);font-size:.88rem;">8AM – 6PM</td><td style="padding:.7rem 1rem;"><span style="color:var(--green);font-size:.82rem;">● Open</span></td></tr>
-            <tr style="border-bottom:1px solid var(--border);"><td style="padding:.7rem 1rem;font-size:.88rem;">Saturday (Kuwa gatandatu)</td><td style="padding:.7rem 1rem;color:var(--muted);font-size:.88rem;">9AM – 4PM</td><td style="padding:.7rem 1rem;"><span style="color:var(--gold);font-size:.82rem;">● Limited</span></td></tr>
-            <tr><td style="padding:.7rem 1rem;font-size:.88rem;">Sunday (Ku cyumweru)</td><td style="padding:.7rem 1rem;color:var(--muted);font-size:.88rem;">Closed</td><td style="padding:.7rem 1rem;"><span style="color:#ff6b6b;font-size:.82rem;">● Closed</span></td></tr>
-          </tbody>
-        </table>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Elissa <span>Online</span> <em>Store</em></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="prouducts.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="member.html">Member</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="prouducts.html" class="cart-icon">
+        🛒<span class="cart-count">0</span>
+      </a>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
       </div>
     </div>
+  </nav>
 
-    <!-- CONTACT FORM -->
-    <div class="contact-form">
-      <h3>Send a <span class="gold">Message</span></h3>
-      <div class="form-grid">
-        <div class="fg"><label>First Name *</label><input type="text" placeholder="e.g. Elissa" required></div>
-        <div class="fg"><label>Last Name *</label><input type="text" placeholder="e.g. Uwase" required></div>
-      </div>
-      <div class="fg"><label>Email *</label><input type="email" placeholder="you@example.com" required></div>
-      <div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+250 788 000 000"></div>
-      <div class="fg">
-        <label>Subject *</label>
-        <select required>
-          <option value="">Select a topic</option>
-          <option>Order Status</option>
-          <option>Return / Refund</option>
-          <option>Product Question</option>
-          <option>Delivery Issue</option>
-          <option>MoMo Payment Help</option>
-          <option>General Inquiry</option>
-        </select>
-      </div>
-      <div class="fg"><label>Order Number</label><input type="text" placeholder="e.g. ELS-2026-001234"></div>
-      <div class="fg"><label>Message *</label><textarea placeholder="Twandikire... (Write to us...)" required></textarea></div>
-      <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:1.5rem;">
-        <input type="checkbox" id="pp" style="accent-color:var(--gold);width:16px;height:16px;">
-        <label for="pp" style="font-size:.82rem;color:var(--muted);">I agree to the privacy policy</label>
-      </div>
-      <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="sendMsg()">Send Message →</button>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Contact <span>Us</span></h1>
+    <p>Twandikire — We'd love to hear from you 🇷🇼</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Contact</span>
     </div>
   </div>
-</section>
 
-<!-- FAQ -->
-<section style="background:var(--secondary);">
-  <div class="section-title">
-    <h2>Frequently Asked <span class="gold">Questions</span></h2>
-    <p>Ibibazo bikunze kubazwa</p>
-  </div>
-  <div style="max-width:750px;margin:0 auto;" id="faq"></div>
-</section>
+  <!-- CONTACT MAIN -->
+  <section class="contact-section">
+    <div class="contact-grid">
 
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand"><a href="index.html" class="logo">Elissa<span> Online</span><em> Store</em></a><p>Your trusted shopping destination in Rwanda.</p></div>
-    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="prouducts.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Support</h4><ul><li><a href="contact.html">Help</a></li><li><a href="member.html">Account</a></li></ul></div>
-    <div class="footer-col"><h4>Follow Us</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Twitter</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">© 2026 Elissa Online Store. All rights reserved.<div class="footer-flag">🇷🇼 Made with ❤️ in Rwanda</div></div>
-</footer>
+      <!-- LEFT — CONTACT INFO -->
+      <div class="contact-info">
+        <h2>Get in <span>Touch</span></h2>
+        <p>Have a question about your order or our products? Our support team is available every day to help you.
+          <em>Turaza kukwifuriza!</em> (We are happy to help you!)</p>
 
-<script src="js/main.js"></script>
-<script>
-function sendMsg(){
-  if(!document.getElementById('pp').checked){showToast('Please agree to privacy policy');return;}
-  showToast('✓ Message sent! Murakoze! We reply within 24 hours.');
-}
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Our Address</h4>
+            <p>KG 7 Ave, Kiyovu<br>Kigali, Rwanda</p>
+          </div>
+        </div>
 
-const faqs = [
-  {q:'How do I pay? (Nishyura gute?)', a:'We accept MTN Mobile Money, Airtel Money, Visa/Mastercard and cash on delivery across Rwanda.'},
-  {q:'Do you deliver across Rwanda?', a:'Yes! We deliver to all 5 provinces of Rwanda. Kigali delivery takes 1–2 days, other provinces 2–4 days.'},
-  {q:'What is your return policy?', a:'We offer a 7-day return policy on all unused items in original packaging. Contact us on WhatsApp for quick help.'},
-  {q:'How do I track my order?', a:'Once shipped, you receive an SMS with a tracking code. You can also check your order status in your member account.'},
-  {q:'Is my payment secure?', a:'Absolutely. All payments are processed securely. MTN MoMo transactions are fully encrypted.'},
-];
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h4>Email Us</h4>
+            <p>support@elissastore.rw<br>orders@elissastore.rw</p>
+          </div>
+        </div>
 
-const faqEl = document.getElementById('faq');
-faqs.forEach((f,i) => {
-  const d = document.createElement('div');
-  d.style.cssText = 'background:var(--card);border-radius:14px;margin-bottom:1rem;border:1px solid var(--border);overflow:hidden;';
-  d.innerHTML = `<div onclick="tF(${i})" style="padding:1.1rem 1.4rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.95rem;">${f.q}<span id="ic${i}" style="color:var(--gold);font-size:1.3rem;">+</span></div><div id="an${i}" style="max-height:0;overflow:hidden;transition:max-height .35s ease;"><p style="padding:0 1.4rem 1.1rem;color:var(--muted);line-height:1.8;font-size:.9rem;">${f.a}</p></div>`;
-  faqEl.appendChild(d);
-});
-function tF(i){
-  const a=document.getElementById('an'+i), ic=document.getElementById('ic'+i);
-  const open = a.style.maxHeight && a.style.maxHeight !== '0px';
-  a.style.maxHeight = open ? '0' : '200px';
-  ic.textContent = open ? '+' : '−';
-}
-</script>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Call / WhatsApp</h4>
+            <p>+250 788 123 456<br>+250 722 987 654</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div>
+            <h4>MTN MoMo</h4>
+            <p>0788 123 456<br>Pay easily with Mobile Money</p>
+          </div>
+        </div>
+
+        <!-- STORE HOURS TABLE -->
+        <div class="hours-wrapper">
+          <h3>Store Hours <em>(Amasaha y'akazi)</em></h3>
+          <table class="hours-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Hours</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday (Kuwa mbere)</td>
+                <td>8AM – 6PM</td>
+                <td><span class="status-open">● Open</span></td>
+              </tr>
+              <tr>
+                <td>Tuesday (Kuwa kabiri)</td>
+                <td>8AM – 6PM</td>
+                <td><span class="status-open">● Open</span></td>
+              </tr>
+              <tr>
+                <td>Wednesday (Kuwa gatatu)</td>
+                <td>8AM – 6PM</td>
+                <td><span class="status-open">● Open</span></td>
+              </tr>
+              <tr>
+                <td>Thursday (Kuwa kane)</td>
+                <td>8AM – 6PM</td>
+                <td><span class="status-open">● Open</span></td>
+              </tr>
+              <tr>
+                <td>Friday (Kuwa gatanu)</td>
+                <td>8AM – 6PM</td>
+                <td><span class="status-open">● Open</span></td>
+              </tr>
+              <tr>
+                <td>Saturday (Kuwa gatandatu)</td>
+                <td>9AM – 4PM</td>
+                <td><span class="status-limited">● Limited</span></td>
+              </tr>
+              <tr>
+                <td>Sunday (Ku cyumweru)</td>
+                <td>Closed</td>
+                <td><span class="status-closed">● Closed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- RIGHT — CONTACT FORM -->
+      <div class="contact-form-wrapper">
+        <h2>Send a <span>Message</span></h2>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" id="contactFirstName" placeholder="e.g. Elissa" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" id="contactLastName" placeholder="e.g. Uwase" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="contactEmail" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" id="contactPhone" placeholder="+250 788 000 000">
+        </div>
+
+        <div class="form-group">
+          <label>Subject *</label>
+          <select id="contactSubject" required>
+            <option value="">Select a topic</option>
+            <option value="order">Order Status</option>
+            <option value="return">Return / Refund</option>
+            <option value="product">Product Question</option>
+            <option value="delivery">Delivery Issue</option>
+            <option value="momo">MTN MoMo Payment Help</option>
+            <option value="general">General Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Order Number (if applicable)</label>
+          <input type="text" id="contactOrder" placeholder="e.g. ELS-2026-001234">
+        </div>
+
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea id="contactMessage" placeholder="Twandikire... (Write to us...)" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="contactAgree">
+            I agree to the <a href="#">privacy policy</a>
+          </label>
+        </div>
+
+        <button class="btn btn-orange" style="width:100%;" onclick="sendMessage()">
+          Send Message →
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="section-title">
+      <h2>Frequently Asked <span>Questions</span></h2>
+      <p>Ibibazo bikunze kubazwa</p>
+    </div>
+    <div class="faq-list" id="faqList">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How do I pay? (Nishyura gute?)</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We accept MTN Mobile Money, Airtel Money, Visa/Mastercard and cash on delivery across Rwanda.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Do you deliver across Rwanda?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! We deliver to all 5 provinces of Rwanda. Kigali delivery takes 1–2 days, other provinces 2–4 days.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What is your return policy?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We offer a 7-day return policy on all unused items in original packaging. Contact us on WhatsApp for quick
+            help.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How do I track my order?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Once shipped, you receive an SMS with a tracking code. You can also check your order status in your member
+            account.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Is my payment secure?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely. All payments are processed securely. MTN MoMo transactions are fully encrypted and safe.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Can I change or cancel my order?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! You can change or cancel your order within 2 hours of placing it. Contact us immediately on WhatsApp.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Elissa <span>Online</span> <em>Store</em></a>
+        <p>Your trusted online shopping destination, proudly serving Rwanda and beyond.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="prouducts.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="prouducts.html?cat=electronics">Electronics</a></li>
+          <li><a href="prouducts.html?cat=footwear">Footwear</a></li>
+          <li><a href="prouducts.html?cat=clothing">Clothing</a></li>
+          <li><a href="prouducts.html?cat=beauty">Beauty</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Help Center</a></li>
+          <li><a href="contact.html">Returns</a></li>
+          <li><a href="member.html">My Account</a></li>
+          <li><a href="contact.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Elissa Online Store. All rights reserved.</p>
+      <p class="footer-flag">🇷🇼 Made with ❤️ in Rwanda | Web Design & Production Course</p>
+    </div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/contact.js"></script>
 </body>
+
 </html>

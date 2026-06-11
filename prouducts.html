@@ -1,286 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products – Elissa Online Store</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/prouducts.css">
 </head>
-
 <body>
 
+  <!-- NAVBAR -->
   <nav class="navbar">
-    <a href="index.html" class="logo">Elissa<span> Online</span><em> Store</em></a>
+    <a href="index.html" class="logo">Elissa <span>Online</span> <em>Store</em></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="prouducts.html">Products</a></li>
+      <li><a href="prouducts.html" class="active">Products</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="member.html">Member</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <a href="prouducts.html" class="cart-icon">🛒<span class="cart-count">0</span></a>
-      <div class="hamburger"><span></span><span></span><span></span></div>
+      <a href="prouducts.html" class="cart-icon">
+        🛒<span class="cart-count">0</span>
+      </a>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </nav>
 
+  <!-- PAGE HEADER -->
   <div class="page-header">
-    <h1>All <span class="gold">Products</span></h1>
+    <h1>All <span>Products</span></h1>
     <p>Browse our full collection — quality you can trust 🇷🇼</p>
-    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Products</span></div>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Products</span>
+    </div>
   </div>
 
-  <section>
-    <div class="filters">
-      <button class="f-btn active" data-filter="all">All</button>
-      <button class="f-btn" data-filter="electronics">Electronics</button>
-      <button class="f-btn" data-filter="footwear">Footwear</button>
-      <button class="f-btn" data-filter="accessories">Accessories</button>
-      <button class="f-btn" data-filter="clothing">Clothing</button>
-      <button class="f-btn" data-filter="beauty">Beauty</button>
-      <div class="search-wrap"><input type="text" placeholder="🔍 Search products..."></div>
-    </div>
+  <!-- MAIN CONTENT -->
+  <div class="products-page">
 
-    <div class="products-grid">
-      <div class="product-card" data-cat="electronics"><span class="badge">🔥 HOT</span>
-        <div class="prod-img"><img src="images/headphone.jpg" alt=""></div>
-        <div class="prod-info">
-          <h3>Pro Wireless Headphones</h3>
-          <div class="prod-rating">★★★★★ (128)</div>
-          <div class="prod-price"><span class="price-now">RWF 89,000</span><span class="price-old">RWF 129,000</span>
-          </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p1','Pro Headphones',89000,'🎧')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+    <!-- SIDEBAR FILTER -->
+    <aside class="sidebar">
+
+      <div class="sidebar-section">
+        <h3>Search</h3>
+        <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="cat-filter">
+          <li><label><input type="radio" name="cat" value="all" checked> All Products</label></li>
+          <li><label><input type="radio" name="cat" value="accessories"> Accessories</label></li>
+          <li><label><input type="radio" name="cat" value="beauty"> Beauty</label></li>
+          <li><label><input type="radio" name="cat" value="clothing"> Clothing</label></li>
+          <li><label><input type="radio" name="cat" value="electronics"> Electronics</label></li>
+          <li><label><input type="radio" name="cat" value="footwear"> Footwear</label></li>
+          <li><label><input type="radio" name="cat" value="home"> Home & Living</label></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Price Range</h3>
+        <div class="price-range">
+          <input type="range" id="priceRange" min="0" max="500000" value="500000" step="5000">
+          <p>Up to: <span id="priceValue">RWF 500,000</span></p>
         </div>
       </div>
 
-      <div class="product-card" data-cat="accessories"><span class="badge badge-green">NEW</span>
-        <div class="prod-img"><img src="images/watch.jpg" alt=""></div>
-        <div class="prod-info">
-          <h3>Smart Watch Series 5</h3>
-          <div class="prod-rating">★★★★☆ (84)</div>
-          <div class="prod-price"><span class="price-now">RWF 249,000</span><span class="price-old">RWF 299,000</span>
-          </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p2','Smart Watch',249000,'⌚')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
-        </div>
+      <div class="sidebar-section">
+        <h3>Sort By</h3>
+        <select id="sortSelect" class="sort-select">
+          <option value="default">Default</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+        </select>
       </div>
 
-      <div class="product-card" data-cat="footwear">
-        <div class="prod-img"><img src="images/shoes.webp" alt=""></div>
-        <div class="prod-info">
-          <h3>Air Max Pro X Sneakers</h3>
-          <div class="prod-rating">★★★★★ (256)</div>
-          <div class="prod-price"><span class="price-now">RWF 129,000</span><span class="price-old">RWF 179,000</span>
-          </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p3','Air Max Pro X',129000,'👟')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
-        </div>
+      <button class="btn btn-orange" onclick="resetFilters()" style="width:100%;margin-top:1rem;">
+        Reset Filters
+      </button>
+
+    </aside>
+
+    <!-- PRODUCTS GRID -->
+    <main class="products-main">
+
+      <div class="products-toolbar">
+        <p id="productCount">Showing all products</p>
       </div>
 
-      <div class="product-card" data-cat="electronics"><span class="badge">SALE</span>
-        <div class="prod-img"><img src="images/samsung.webp" alt=""></div>
-        <div class="prod-info">
-          <h3>Phone Protective Case</h3>
-          <div class="prod-rating">★★★★☆ (42)</div>
-          <div class="prod-price"><span class="price-now">RWF 19,000</span><span class="price-old">RWF 34,000</span>
+      <div class="products-grid" id="productsGrid">
+
+        <!-- ACCESSORIES -->
+        <div class="product-card" data-cat="accessories" data-price="35000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/accessories/lipstick.webp" alt="Lipstick">
+            <span class="badge">NEW</span>
           </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p4','Phone Case',19000,'📱')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
-        </div>
-      </div>
-
-      <div class="product-card" data-cat="clothing">
-        <div class="prod-img"><img src="images/shirt.webp" alt=""></div>
-        <div class="prod-info">
-          <h3>Classic Oxford Shirt</h3>
-          <div class="prod-rating">★★★★★ (63)</div>
-          <div class="prod-price"><span class="price-now">RWF 59,000</span><span class="price-old">RWF 89,000</span>
+          <div class="prod-info">
+            <h3>Luxury Lipstick</h3>
+            <div class="rating">★★★★☆ (45)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 35,000</span>
+              <span class="price-old">RWF 50,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('a1','Luxury Lipstick',35000,'images/accessories/lipstick.webp')">Add to Cart</button>
           </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p5','Oxford Shirt',59000,'👔')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
         </div>
-      </div>
 
-      <div class="product-card" data-cat="beauty"><span class="badge badge-green">NEW</span>
-        <div class="prod-img"><img src="images/lipstick.webp" alt="">
-        </div>
-        <div class="prod-info">
-          <h3>Luxury Lip Collection</h3>
-          <div class="prod-rating">★★★★☆ (91)</div>
-          <div class="prod-price"><span class="price-now">RWF 45,000</span><span class="price-old">RWF 65,000</span>
+        <div class="product-card" data-cat="accessories" data-price="45000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/accessories/necklace.jpg" alt="Necklace">
           </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p6','Lip Collection',45000,'💄')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
-        </div>
-      </div>
-
-      <div class="product-card" data-cat="accessories">
-        <div class="prod-img"><img src="images/bag.jpg" alt=""></div>
-        <div class="prod-info">
-          <h3>Designer Handbag</h3>
-          <div class="prod-rating">★★★★★ (37)</div>
-          <div class="prod-price"><span class="price-now">RWF 189,000</span><span class="price-old">RWF 249,000</span>
+          <div class="prod-info">
+            <h3>Gold Necklace</h3>
+            <div class="rating">★★★★★ (78)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 45,000</span>
+              <span class="price-old">RWF 70,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('a2','Gold Necklace',45000,'images/accessories/necklace.jpg')">Add to Cart</button>
           </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p7','Designer Handbag',189000,'👜')">Add to Cart</button><button
-              class="btn btn-outline" onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
         </div>
-      </div>
 
-      <div class="product-card" data-cat="electronics"><span class="badge">🔥 HOT</span>
-        <div class="prod-img"><img src="images/lenovo.webp" alt=""></div>
-        <div class="prod-info">
-          <h3>Laptop Stand Pro</h3>
-          <div class="prod-rating">★★★★☆ (55)</div>
-          <div class="prod-price"><span class="price-now">RWF 39,000</span><span class="price-old">RWF 59,000</span>
+        <div class="product-card" data-cat="accessories" data-price="30000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/accessories/ring.avif" alt="Ring">
+            <span class="badge badge-green">SALE</span>
           </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p8','Laptop Stand',39000,'💻')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
-        </div>
-      </div>
-
-      <div class="product-card" data-cat="footwear">
-        <div class="prod-img"><img src="images/elegant-heels.avif" alt=""></div>
-        <div class="prod-info">
-          <h3>Elegant Heels</h3>
-          <div class="prod-rating">★★★★★ (114)</div>
-          <div class="prod-price"><span class="price-now">RWF 99,000</span><span class="price-old">RWF 149,000</span>
+          <div class="prod-info">
+            <h3>Diamond Ring</h3>
+            <div class="rating">★★★★☆ (32)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 30,000</span>
+              <span class="price-old">RWF 55,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('a3','Diamond Ring',30000,'images/accessories/ring.avif')">Add to Cart</button>
           </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p9','Elegant Heels',99000,'👠')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
         </div>
-      </div>
 
-      <div class="product-card" data-cat="clothing"><span class="badge">SALE</span>
-        <div class="prod-img"><img src="images/shirt.webp" alt=""></div>
-        <div class="prod-info">
-          <h3>Winter Coat Deluxe</h3>
-          <div class="prod-rating">★★★★☆ (78)</div>
-          <div class="prod-price"><span class="price-now">RWF 179,000</span><span class="price-old">RWF 259,000</span>
+        <div class="product-card" data-cat="accessories" data-price="25000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/accessories/wallet.avif" alt="Wallet">
           </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p10','Winter Coat',179000,'🧥')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
-        </div>
-      </div>
-
-      <div class="product-card" data-cat="beauty">
-        <div class="prod-img"><img src="images/skin oil.jpg" alt=""></div>
-        <div class="prod-info">
-          <h3>Skincare Essentials Kit</h3>
-          <div class="prod-rating">★★★★★ (203)</div>
-          <div class="prod-price"><span class="price-now">RWF 79,000</span><span class="price-old">RWF 109,000</span>
+          <div class="prod-info">
+            <h3>Leather Wallet</h3>
+            <div class="rating">★★★★☆ (61)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 25,000</span>
+              <span class="price-old">RWF 40,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('a4','Leather Wallet',25000,'images/accessories/wallet.avif')">Add to Cart</button>
           </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p11','Skincare Kit',79000,'🧴')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
         </div>
-      </div>
 
-      <div class="product-card" data-cat="accessories"><span class="badge badge-green">NEW</span>
-        <div class="prod-img"><img src="images/sunglasses.webp" alt=""></div>
-        <div class="prod-info">
-          <h3>UV Shield Sunglasses</h3>
-          <div class="prod-rating">★★★★☆ (49)</div>
-          <div class="prod-price"><span class="price-now">RWF 69,000</span><span class="price-old">RWF 99,000</span>
+        <div class="product-card" data-cat="accessories" data-price="120000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/accessories/watch.jpg" alt="Watch">
+            <span class="badge">🔥 HOT</span>
           </div>
-          <div class="prod-actions"><button class="btn btn-primary"
-              onclick="addToCart('p12','Sunglasses',69000,'🕶️')">Add to Cart</button><button class="btn btn-outline"
-              onclick="showToast('❤️ Added to wishlist!')">♡</button></div>
+          <div class="prod-info">
+            <h3>Classic Watch</h3>
+            <div class="rating">★★★★★ (203)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 120,000</span>
+              <span class="price-old">RWF 180,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('a5','Classic Watch',120000,'images/accessories/watch.jpg')">Add to Cart</button>
+          </div>
         </div>
+
+        <!-- BEAUTY -->
+        <div class="product-card" data-cat="beauty" data-price="28000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/beauty/facecream.avif" alt="Face Cream">
+          </div>
+          <div class="prod-info">
+            <h3>Glow Face Cream</h3>
+            <div class="rating">★★★★☆ (54)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 28,000</span>
+              <span class="price-old">RWF 45,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('b1','Glow Face Cream',28000,'images/beauty/facecream.avif')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="beauty" data-price="35000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/beauty/facemakeup.jpg" alt="Face Makeup">
+            <span class="badge badge-green">NEW</span>
+          </div>
+          <div class="prod-info">
+            <h3>Face Makeup Kit</h3>
+            <div class="rating">★★★★★ (89)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 35,000</span>
+              <span class="price-old">RWF 60,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('b2','Face Makeup Kit',35000,'images/beauty/facemakeup.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="beauty" data-price="22000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/beauty/foundation.webp" alt="Foundation">
+          </div>
+          <div class="prod-info">
+            <h3>Smooth Foundation</h3>
+            <div class="rating">★★★★☆ (67)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 22,000</span>
+              <span class="price-old">RWF 35,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('b3','Smooth Foundation',22000,'images/beauty/foundation.webp')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="beauty" data-price="45000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/beauty/perfume.jpg" alt="Perfume">
+            <span class="badge">🔥 HOT</span>
+          </div>
+          <div class="prod-info">
+            <h3>Luxury Perfume</h3>
+            <div class="rating">★★★★★ (112)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 45,000</span>
+              <span class="price-old">RWF 65,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('b4','Luxury Perfume',45000,'images/beauty/perfume.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="beauty" data-price="18000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/beauty/shampoo.avif" alt="Shampoo">
+          </div>
+          <div class="prod-info">
+            <h3>Premium Shampoo</h3>
+            <div class="rating">★★★★☆ (43)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 18,000</span>
+              <span class="price-old">RWF 28,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('b5','Premium Shampoo',18000,'images/beauty/shampoo.avif')">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- CLOTHING -->
+        <div class="product-card" data-cat="clothing" data-price="75000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/clothing/blazer.jpg" alt="Blazer">
+            <span class="badge">🔥 HOT</span>
+          </div>
+          <div class="prod-info">
+            <h3>Classic Blazer</h3>
+            <div class="rating">★★★★★ (56)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 75,000</span>
+              <span class="price-old">RWF 110,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('c1','Classic Blazer',75000,'images/clothing/blazer.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="clothing" data-price="95000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/clothing/coat.avif" alt="Coat">
+            <span class="badge badge-green">NEW</span>
+          </div>
+          <div class="prod-info">
+            <h3>Winter Coat</h3>
+            <div class="rating">★★★★☆ (38)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 95,000</span>
+              <span class="price-old">RWF 140,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('c2','Winter Coat',95000,'images/clothing/coat.avif')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="clothing" data-price="40000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/clothing/hoodie.jpg" alt="Hoodie">
+          </div>
+          <div class="prod-info">
+            <h3>Cozy Hoodie</h3>
+            <div class="rating">★★★★☆ (91)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 40,000</span>
+              <span class="price-old">RWF 60,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('c3','Cozy Hoodie',40000,'images/clothing/hoodie.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="clothing" data-price="30000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/clothing/shirt.webp" alt="Shirt">
+          </div>
+          <div class="prod-info">
+            <h3>Classic Shirt</h3>
+            <div class="rating">★★★★★ (74)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 30,000</span>
+              <span class="price-old">RWF 50,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('c4','Classic Shirt',30000,'images/clothing/shirt.webp')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="clothing" data-price="20000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/clothing/tshirt.webp" alt="T-Shirt">
+            <span class="badge badge-green">SALE</span>
+          </div>
+          <div class="prod-info">
+            <h3>Casual T-Shirt</h3>
+            <div class="rating">★★★★☆ (120)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 20,000</span>
+              <span class="price-old">RWF 35,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('c5','Casual T-Shirt',20000,'images/clothing/tshirt.webp')">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- ELECTRONICS -->
+        <div class="product-card" data-cat="electronics" data-price="89000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/electronics/headphone.jpg" alt="Headphone">
+            <span class="badge">🔥 HOT</span>
+          </div>
+          <div class="prod-info">
+            <h3>Pro Wireless Headphone</h3>
+            <div class="rating">★★★★★ (128)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 89,000</span>
+              <span class="price-old">RWF 129,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('e1','Pro Headphone',89000,'images/electronics/headphone.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="electronics" data-price="350000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/electronics/lenovo.webp" alt="Lenovo Laptop">
+            <span class="badge badge-green">NEW</span>
+          </div>
+          <div class="prod-info">
+            <h3>Lenovo Laptop</h3>
+            <div class="rating">★★★★★ (45)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 350,000</span>
+              <span class="price-old">RWF 450,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('e2','Lenovo Laptop',350000,'images/electronics/lenovo.webp')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="electronics" data-price="15000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/electronics/mouse.jpg" alt="Mouse">
+          </div>
+          <div class="prod-info">
+            <h3>Wireless Mouse</h3>
+            <div class="rating">★★★★☆ (87)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 15,000</span>
+              <span class="price-old">RWF 25,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('e3','Wireless Mouse',15000,'images/electronics/mouse.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="electronics" data-price="25000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/electronics/powerbank.webp" alt="Powerbank">
+            <span class="badge badge-green">SALE</span>
+          </div>
+          <div class="prod-info">
+            <h3>Power Bank 20000mAh</h3>
+            <div class="rating">★★★★☆ (156)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 25,000</span>
+              <span class="price-old">RWF 40,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('e4','Power Bank',25000,'images/electronics/powerbank.webp')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="electronics" data-price="280000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/electronics/samsung.webp" alt="Samsung Phone">
+            <span class="badge">🔥 HOT</span>
+          </div>
+          <div class="prod-info">
+            <h3>Samsung Smartphone</h3>
+            <div class="rating">★★★★★ (234)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 280,000</span>
+              <span class="price-old">RWF 350,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('e5','Samsung Smartphone',280000,'images/electronics/samsung.webp')">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- FOOTWEAR -->
+        <div class="product-card" data-cat="footwear" data-price="65000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/footwear/boots.jpg" alt="Boots">
+          </div>
+          <div class="prod-info">
+            <h3>Leather Boots</h3>
+            <div class="rating">★★★★☆ (67)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 65,000</span>
+              <span class="price-old">RWF 95,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('f1','Leather Boots',65000,'images/footwear/boots.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="footwear" data-price="59000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/footwear/elegant-heels.avif" alt="Elegant Heels">
+            <span class="badge badge-green">NEW</span>
+          </div>
+          <div class="prod-info">
+            <h3>Elegant Heels</h3>
+            <div class="rating">★★★★★ (84)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 59,000</span>
+              <span class="price-old">RWF 89,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('f2','Elegant Heels',59000,'images/footwear/elegant-heels.avif')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="footwear" data-price="30000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/footwear/sandals.webp" alt="Sandals">
+            <span class="badge badge-green">SALE</span>
+          </div>
+          <div class="prod-info">
+            <h3>Summer Sandals</h3>
+            <div class="rating">★★★★☆ (112)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 30,000</span>
+              <span class="price-old">RWF 50,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('f3','Summer Sandals',30000,'images/footwear/sandals.webp')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="footwear" data-price="75000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/footwear/shoes.webp" alt="Shoes">
+            <span class="badge">🔥 HOT</span>
+          </div>
+          <div class="prod-info">
+            <h3>Sport Shoes</h3>
+            <div class="rating">★★★★★ (198)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 75,000</span>
+              <span class="price-old">RWF 110,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('f4','Sport Shoes',75000,'images/footwear/shoes.webp')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="footwear" data-price="15000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/footwear/slippers.jpg" alt="Slippers">
+          </div>
+          <div class="prod-info">
+            <h3>Comfort Slippers</h3>
+            <div class="rating">★★★★☆ (76)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 15,000</span>
+              <span class="price-old">RWF 25,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('f5','Comfort Slippers',15000,'images/footwear/slippers.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- HOME & LIVING -->
+        <div class="product-card" data-cat="home" data-price="35000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/home&living/blanket.jpg" alt="Blanket">
+          </div>
+          <div class="prod-info">
+            <h3>Cozy Blanket</h3>
+            <div class="rating">★★★★☆ (54)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 35,000</span>
+              <span class="price-old">RWF 55,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('h1','Cozy Blanket',35000,'images/home&living/blanket.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="home" data-price="150000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/home&living/chair.jpg" alt="Chair">
+            <span class="badge">🔥 HOT</span>
+          </div>
+          <div class="prod-info">
+            <h3>Comfort Chair</h3>
+            <div class="rating">★★★★★ (43)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 150,000</span>
+              <span class="price-old">RWF 220,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('h2','Comfort Chair',150000,'images/home&living/chair.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="home" data-price="45000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/home&living/lamps.jpg" alt="Lamp">
+            <span class="badge badge-green">NEW</span>
+          </div>
+          <div class="prod-info">
+            <h3>Decorative Lamp</h3>
+            <div class="rating">★★★★☆ (38)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 45,000</span>
+              <span class="price-old">RWF 70,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('h3','Decorative Lamp',45000,'images/home&living/lamps.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="home" data-price="20000" data-rating="4">
+          <div class="prod-img">
+            <img src="images/home&living/pillow.jpg" alt="Pillow">
+          </div>
+          <div class="prod-info">
+            <h3>Soft Pillow Set</h3>
+            <div class="rating">★★★★☆ (92)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 20,000</span>
+              <span class="price-old">RWF 35,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('h4','Soft Pillow Set',20000,'images/home&living/pillow.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="home" data-price="55000" data-rating="5">
+          <div class="prod-img">
+            <img src="images/home&living/utensils.jpg" alt="Utensils">
+            <span class="badge badge-green">SALE</span>
+          </div>
+          <div class="prod-info">
+            <h3>Kitchen Utensils Set</h3>
+            <div class="rating">★★★★★ (67)</div>
+            <div class="price-row">
+              <span class="price-now">RWF 55,000</span>
+              <span class="price-old">RWF 80,000</span>
+            </div>
+            <button class="btn btn-orange" onclick="addToCart('h5','Kitchen Utensils Set',55000,'images/home&living/utensils.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
       </div>
-    </div>
+      <!-- END PRODUCTS GRID -->
 
-    <!-- CART TABLE -->
-    <div style="margin-top:4rem;">
-      <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:2rem;">Your <span class="gold">Cart</span></h2>
-      <div class="cart-layout" id="cartArea"></div>
-    </div>
-  </section>
+    </main>
+  </div>
+  <!-- END PRODUCTS PAGE -->
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
-      <div class="footer-brand"><a href="index.html" class="logo">Elissa<span> Online</span><em> Store</em></a>
-        <p>Your trusted shopping destination in Rwanda.</p>
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Elissa <span>Online</span> <em>Store</em></a>
+        <p>Your trusted online shopping destination, proudly serving Rwanda and beyond.</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="prouducts.html">Products</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="prouducts.html?cat=electronics">Electronics</a></li>
+          <li><a href="prouducts.html?cat=footwear">Footwear</a></li>
+          <li><a href="prouducts.html?cat=clothing">Clothing</a></li>
+          <li><a href="prouducts.html?cat=beauty">Beauty</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Support</h4>
         <ul>
           <li><a href="contact.html">Help Center</a></li>
+          <li><a href="contact.html">Returns</a></li>
           <li><a href="member.html">My Account</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Us</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
+          <li><a href="contact.html">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Elissa Online Store. All rights reserved.<div class="footer-flag">🇷🇼 Made with
-        ❤️ in Rwanda</div>
+    <div class="footer-bottom">
+      <p>© 2026 Elissa Online Store. All rights reserved.</p>
+      <p class="footer-flag">🇷🇼 Made with ❤️ in Rwanda | Web Design & Production Course</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script>
-    function renderCart() {
-      const area = document.getElementById('cartArea');
-      if (!area) return;
-      if (cart.length === 0) {
-        area.innerHTML = `<div class="empty-cart"><div class="em">🛒</div><h2>Your cart is empty</h2><p>Add some products above!</p><a href="prouducts.html" class="btn btn-gold" style="margin-top:1rem;">Start Shopping</a></div>`;
-        return;
-      }
-      const sub = cartTotal(), ship = sub > 50000 ? 0 : 5000, tax = Math.round(sub * .18), total = sub + ship + tax;
-      const fmt = n => 'RWF ' + n.toLocaleString();
-      const rows = cart.map(i => `<tr><td><div class="c-prod"><span class="em">${i.emoji}</span><div><h4>${i.name}</h4><p>${fmt(i.price)} each</p></div></div></td><td>${fmt(i.price)}</td><td><div class="qty-ctrl"><button class="q-btn" onclick="updQty('${i.id}',-1)">−</button><span>${i.qty}</span><button class="q-btn" onclick="updQty('${i.id}',1)">+</button></div></td><td><strong>${fmt(i.price * i.qty)}</strong></td><td><button class="rm-btn" onclick="remItem('${i.id}')">🗑</button></td></tr>`).join('');
-      area.innerHTML = `
-    <div>
-      <table class="cart-table">
-        <thead><tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th><th></th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-      <div style="margin-top:1.5rem;"><button class="btn btn-outline" onclick="clearAll()" style="color:#ff6b6b;border-color:#ff6b6b;">🗑 Clear Cart</button></div>
-    </div>
-    <div class="cart-summary">
-      <h3>Order Summary</h3>
-      <div class="s-row"><span>Subtotal (${cartCount()} items)</span><span>${fmt(sub)}</span></div>
-      <div class="s-row"><span>Shipping</span><span>${ship === 0 ? '<span style="color:var(--green)">FREE</span>' : fmt(ship)}</span></div>
-      <div class="s-row"><span>VAT (18%)</span><span>${fmt(tax)}</span></div>
-      <div class="s-row total"><span>Total</span><span>${fmt(total)}</span></div>
-      <div class="promo-row"><input type="text" id="pc" placeholder="Promo code"><button class="btn btn-outline" onclick="applyPromo()" style="padding:.5rem 1rem;font-size:.82rem;">Apply</button></div>
-      <button class="btn btn-gold" style="width:100%;justify-content:center;margin-bottom:.8rem;" onclick="checkout()">Checkout →</button>
-      <p style="text-align:center;color:var(--muted);font-size:.78rem;">🔒 Secure | 📱 MTN MoMo accepted</p>
-    </div>`;
-    }
-    function updQty(id, d) { const i = cart.find(x => x.id === id); if (!i) return; i.qty += d; if (i.qty <= 0) cart = cart.filter(x => x.id !== id); saveCart(); updateBadge(); renderCart(); }
-    function remItem(id) { cart = cart.filter(x => x.id !== id); saveCart(); updateBadge(); renderCart(); showToast('Item removed'); }
-    function clearAll() { cart = []; saveCart(); updateBadge(); renderCart(); }
-    function applyPromo() { const c = document.getElementById('pc')?.value.toUpperCase(); showToast(c === 'ELISSA10' ? '✓ 10% off applied! Murakoze!' : 'Invalid promo code'); }
-    function checkout() { showToast('🎉 Order placed! Murakoze! (Thank you)'); setTimeout(() => { cart = []; saveCart(); updateBadge(); renderCart(); }, 2500); }
-    document.addEventListener('DOMContentLoaded', renderCart);
-  </script>
+  <script src="js/global.js"></script>
+  <script src="js/prouducts.js"></script>
 </body>
-
 </html>
