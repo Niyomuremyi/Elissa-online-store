@@ -1,0 +1,99 @@
+/* ==========================================================================
+   ELISSA ONLINE STORE — index.css  (Home page only)
+   ========================================================================== */
+
+/* ----------------------------------------------------------- HERO SLIDER */
+.hero { position: relative; height: clamp(440px, 72vh, 640px); overflow: hidden; }
+.hero-slides { height: 100%; }
+.hero-slide {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  display: flex; align-items: center;
+  opacity: 0; transition: opacity 0.8s ease;
+}
+.hero-slide.active { opacity: 1; }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(30,33,38,0.9) 0%, rgba(30,33,38,0.5) 55%, rgba(30,33,38,0.15) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: var(--maxw); width: 100%; margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem); color: #fff;
+}
+.hero-tag {
+  display: inline-block;
+  font-family: var(--font-head); font-weight: 600; font-size: 0.85rem;
+  padding: 0.4rem 1rem; margin-bottom: 1.1rem;
+  background: rgba(241,90,41,0.2); border: 1px solid var(--orange);
+  border-radius: 50px; color: #fff;
+}
+.hero-content h1 {
+  color: #fff; font-size: clamp(2.1rem, 5.5vw, 3.6rem);
+  font-weight: 800; letter-spacing: -1px; max-width: 600px;
+}
+.hero-content h1 span { color: var(--orange); }
+.hero-content p { margin-top: 1rem; max-width: 460px; color: rgba(255,255,255,0.82); font-size: 1.08rem; }
+.hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; }
+
+/* dots */
+.hero-dots { position: absolute; bottom: 1.4rem; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 0.6rem; }
+.hero-dots .dot { width: 11px; height: 11px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background var(--ease), width var(--ease); }
+.hero-dots .dot.active { background: var(--orange); width: 28px; border-radius: 50px; }
+
+/* arrows */
+.hero-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+  width: 46px; height: 46px; display: grid; place-items: center;
+  font-size: 1.4rem; color: #fff;
+  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%; cursor: pointer; backdrop-filter: blur(4px);
+  transition: background var(--ease), border-color var(--ease);
+}
+.hero-arrow:hover { background: var(--orange); border-color: var(--orange); }
+.hero-arrow.left { left: clamp(0.8rem, 2vw, 1.8rem); }
+.hero-arrow.right { right: clamp(0.8rem, 2vw, 1.8rem); }
+
+/* ----------------------------------------------------------- SECTION SPACING */
+.categories-section,
+.featured-section,
+.newsletter-section {
+  max-width: var(--maxw); margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+/* ----------------------------------------------------------- CATEGORIES SCROLL */
+.categories-scroll { display: flex; gap: 1.4rem; overflow-x: auto; padding: 0.5rem 0.2rem 1.2rem; scroll-snap-type: x mandatory; }
+.categories-scroll::-webkit-scrollbar { height: 6px; }
+.categories-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 50px; }
+.cat-card { flex: 0 0 auto; width: 140px; text-align: center; scroll-snap-align: start; }
+.cat-img { width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 3px solid transparent; box-shadow: var(--shadow); transition: transform var(--ease), border-color var(--ease); }
+.cat-img img { width: 100%; height: 100%; object-fit: cover; }
+.cat-card:hover .cat-img { transform: translateY(-5px); border-color: var(--orange); }
+.cat-card h3 { margin-top: 0.9rem; font-size: 1rem; font-weight: 600; }
+
+/* ----------------------------------------------------------- FEATURED CTA */
+.featured-cta { text-align: center; margin-top: 2.5rem; }
+
+/* ----------------------------------------------------------- FLASH SALE / PROMO */
+.promo-section { background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%); color: #fff; text-align: center; padding: clamp(3rem, 6vw, 4.5rem) 1.5rem; }
+.promo-content { max-width: 720px; margin: 0 auto; }
+.promo-content h2 { color: #fff; font-size: clamp(1.6rem, 4vw, 2.4rem); }
+.promo-content > p { margin-top: 0.6rem; opacity: 0.9; }
+.countdown { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin: 1.8rem 0; }
+.cd-box { background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.25); border-radius: var(--radius); padding: 0.9rem 1.1rem; min-width: 84px; }
+.cd-box .num { display: block; font-family: var(--font-head); font-size: 2rem; font-weight: 800; line-height: 1; }
+.cd-box .lbl { display: block; margin-top: 0.35rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
+
+/* ----------------------------------------------------------- NEWSLETTER */
+.nl-form { display: flex; gap: 0.8rem; max-width: 540px; margin: 0 auto; }
+.nl-form input { flex: 1; font-family: var(--font-body); font-size: 0.95rem; padding: 0.85rem 1.3rem; background: var(--bg-soft); border: 1.5px solid var(--line); border-radius: 50px; }
+.nl-form input:focus { outline: none; border-color: var(--orange); background: #fff; box-shadow: 0 0 0 4px rgba(241,90,41,0.12); }
+.nl-message { text-align: center; margin-top: 1rem; font-size: 0.92rem; font-weight: 600; color: var(--green); min-height: 1.2em; }
+
+/* ----------------------------------------------------------- RESPONSIVE */
+@media (max-width: 540px) {
+  .nl-form { flex-direction: column; }
+  .nl-form .btn { width: 100%; }
+  .hero-arrow { display: none; }
+}
